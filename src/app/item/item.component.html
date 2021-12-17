@@ -1,0 +1,6 @@
+ <div class="padding">
+    <span class="item" (click)="selectItem(item)" [ngClass]="{'bold': item.Children.length == 0 && item.Level != 1 }">
+        {{ item.Name }} - {{ item.Level == 1 ? index + 1 : getNumber(index + 1 ) }} 
+    </span>
+    <app-item (selectItemEvent)="selectItem($event)" [item]="item" [index]="index" *ngFor="let item of item.Children"></app-item>
+ </div>
